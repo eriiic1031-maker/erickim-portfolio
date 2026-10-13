@@ -18,6 +18,13 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:po
 .nav{display:flex;gap:22px;overflow-x:auto}.nav a:hover{text-decoration:underline;text-underline-offset:5px}
 .hero{display:grid;grid-template-columns:1.35fr .65fr;gap:5vw;align-items:center;padding:clamp(40px,7vw,96px) 0 40px}
 h1{font-size:clamp(38px,6.6vw,88px);line-height:1.08;letter-spacing:-.08em;margin:0 0 22px;font-weight:900}
+.hl{background:linear-gradient(transparent 52%,var(--lime) 52%);color:inherit;font-weight:700;padding:0 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:22px}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--lime);color:var(--ink);font-weight:900;font-size:clamp(16px,2vw,20px);letter-spacing:-.04em;padding:16px 30px;border:2px solid var(--ink);border-radius:50px;box-shadow:5px 5px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.cta:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}.cta:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--ink)}
+.cta-note{font-size:13px;color:var(--muted)}
+@media(max-width:820px){.cta{width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.cta{transition:none}}
 h1 span{background:linear-gradient(transparent 62%,var(--lime) 62%)}
 .hero p{font-size:clamp(16px,1.8vw,21px);margin:0 0 18px;max-width:34em}
 .tag{display:inline-block;font-weight:700;border:1.5px solid var(--ink);border-radius:30px;padding:5px 14px;font-size:14px}
@@ -87,7 +94,7 @@ footer{background:var(--ink);color:#fff;padding:60px 0 36px}footer h2{color:#fff
 <section class="hero">
 <div>
 <h1>사람이 일에<br><span>집중하도록</span><br>환경을 만듭니다.</h1>
-<p>현장에서 발견한 불편함을 <b>기준과 프로세스, AI 활용</b>으로 개선합니다.</p>
+<p>현장에서 발견한 불편함을 <mark class="hl">기준과 프로세스, AI 활용</mark>으로 개선합니다.</p>
 <span class="tag">운영을 이해하고, 개선을 실행하는 총무 전문가</span>
 </div>
 <div class="photo">
@@ -97,10 +104,10 @@ footer{background:var(--ink);color:#fff;padding:60px 0 36px}footer h2{color:#fff
 </section>
 <!-- [확인 필요] 아래 수치의 기준·기간을 본인이 최종 확인 -->
 <section class="facts" aria-label="핵심 성과">
-<div class="fact"><b>약 500명</b><span>조직개편·사옥 이사/공사 프로젝트 규모</span></div>
-<div class="fact"><b>80% 이상</b><span>사무환경 관련 민원 감소</span></div>
-<div class="fact"><b>연 7,000만 원</b><span>커피캡슐 공급사 변경·단가 협상 절감</span></div>
-<div class="fact"><b>4단계 → 1단계</b><span>반복 페이지 업무 프로세스 단축</span></div>
+<div class="fact"><b><mark class="hl">약 500명</mark></b><span>조직개편·사옥 이사/공사 프로젝트 규모</span></div>
+<div class="fact"><b><mark class="hl">80% 이상</mark></b><span>사무환경 관련 민원 감소</span></div>
+<div class="fact"><b><mark class="hl">연 7,000만 원</mark></b><span>커피캡슐 공급사 변경·단가 협상 절감</span></div>
+<div class="fact"><b><mark class="hl">4단계 → 1단계</mark></b><span>반복 페이지 업무 프로세스 단축</span></div>
 </section>
 
 <!-- AI & AUTOMATION -->
@@ -110,26 +117,26 @@ footer{background:var(--ink);color:#fff;padding:60px 0 36px}footer h2{color:#fff
 
 <article class="proj" id="fleet">
 <h3>(AI) 차량관리 프로그램 <span class="b proto">프로토타입</span></h3>
-<p class="value">차량 운영의 분산된 업무를 하나의 흐름으로</p>
+<p class="value">차량 운영의 분산된 업무를 <mark class="hl">하나의 흐름으로</mark></p>
 <div class="psi">
 <div class="p"><h4>PROBLEM</h4><ul><li>현황·예약·정비 이력이 분산</li><li>예약 중복을 반복 확인</li><li>운행기록을 별도로 취합</li></ul></div>
-<div class="s"><h4>SOLUTION</h4><ul><li>관리자: 차량·예약·승인·정비 통합</li><li>임직원: 직접 예약 + AI 예약</li><li>운행 종료 시 주행거리 자동 반영</li></ul></div>
-<div class="i"><h4>IMPACT · 기대 효과</h4><ul><li>예약·가용 상태를 한눈에 파악</li><li>반복 확인·기록 취합 감소 기대</li><li>교체·정비 판단 데이터 확보</li></ul></div>
+<div class="s"><h4>SOLUTION</h4><ul><li>관리자: 차량·예약·승인·정비 통합</li><li><mark class="hl">임직원: 직접 예약 + AI 예약</mark></li><li><mark class="hl">운행 종료 시 주행거리 자동 반영</mark></li></ul></div>
+<div class="i"><h4>IMPACT · 기대 효과</h4><ul><li><mark class="hl">예약·가용 상태를 한눈에 파악</mark></li><li><mark class="hl">반복 확인·기록 취합 감소 기대</mark></li><li><mark class="hl">교체·정비 판단 데이터 확보</mark></li></ul></div>
 </div>
 <div class="ba"><div class="bf"><b>Before</b> 엑셀·메신저로 분산 관리, 수기 확인</div><i>→</i><div class="af"><b>After</b> 예약→승인→운행→기록이 한 흐름</div></div>
 <div class="tabs" role="tablist" id="ftabs" aria-label="시연 화면"></div>
 <div class="shot" role="tabpanel"><div><h5 id="fh"></h5><p id="fc"></p></div><div class="screen" id="fs"></div></div>
-<p class="role"><b>내 역할</b> 직접 기획·구현(Streamlit) &nbsp;|&nbsp; <b>구현 상태</b> 실행 가능한 프로토타입 · <span class="b plan">향후 계획</span> 차량 변경·매각 이력 관리</p>
-<p class="role"><a href="https://corporate-vehicle-management-ai-k4mwfhxx3mhekf4mrnxqe7.streamlit.app/" target="_blank" rel="noopener"><b>▶ 법인차량 관리 AI Page 바로가기 ↗</b></a></p>
+<p class="role"><b>내 역할</b> 직접 기획·구현(Streamlit) &nbsp;|&nbsp; <b>구현 상태</b> <mark class="hl">실행 가능한 프로토타입</mark> · <span class="b plan">향후 계획</span> 차량 변경·매각 이력 관리</p>
+<div class="cta-row"><a class="cta" href="https://corporate-vehicle-management-ai-k4mwfhxx3mhekf4mrnxqe7.streamlit.app/" target="_blank" rel="noopener">▶ 법인차량 관리 AI Page 바로가기 <span aria-hidden="true">↗</span></a><span class="cta-note">실제로 작동하는 프로그램이 새 창에서 열립니다</span></div>
 </article>
 
 <article class="proj" id="bot">
 <h3>(AI) 총무 제규정 Chatbot <span class="b run">운영 중 · ChatGPT 프로젝트</span> <span class="b proto">웹 데모</span> <span class="b plan">웹서비스·RAG 향후</span></h3>
-<p class="value">흩어진 사내 규정을, 필요한 순간에 정확하게</p>
+<p class="value">흩어진 사내 규정을, <mark class="hl">필요한 순간에 정확하게</mark></p>
 <div class="psi">
 <div class="p"><h4>PROBLEM</h4><ul><li>규정·조항 탐색에 시간 소요</li><li>같은 질문에 반복 응대</li><li>문서 버전·해석 차이</li></ul></div>
-<div class="s"><h4>SOLUTION</h4><ul><li>승인된 규정 PDF + 전용 운영 지침으로 답변</li><li>근거 조항을 함께 제시</li><li>근거 없으면 담당 부서 안내</li></ul></div>
-<div class="i"><h4>IMPACT · 기대 효과</h4><ul><li>규정 탐색 시간 감소 기대</li><li>반복 문의 응대 감소 기대</li><li>안내 기준의 일관성 확보</li></ul></div>
+<div class="s"><h4>SOLUTION</h4><ul><li>승인된 규정 PDF + 전용 운영 지침으로 답변</li><li><mark class="hl">근거 조항을 함께 제시</mark></li><li><mark class="hl">근거 없으면 담당 부서 안내</mark></li></ul></div>
+<div class="i"><h4>IMPACT · 기대 효과</h4><ul><li><mark class="hl">규정 탐색 시간 감소 기대</mark></li><li><mark class="hl">반복 문의 응대 감소 기대</mark></li><li><mark class="hl">안내 기준의 일관성 확보</mark></li></ul></div>
 </div>
 <p class="role"><b>내 역할</b> 직접 기획·지침 설계·운영 &nbsp;|&nbsp; <b>구현 상태</b> ChatGPT 프로젝트 기반 운영 + 아래 웹 데모(시연용)</p>
 <div class="demo">
@@ -619,22 +626,22 @@ C. 근거가 없는 경우
 <article class="case" id="case-a"><h3>A. 사옥 이전·사무공간 재배치</h3><div class="psi">
 <div class="p"><h4>PROBLEM</h4><p>조직개편·공사·이사 일정을 함께 관리해야 하는 복잡성</p></div>
 <div class="s"><h4>SOLUTION</h4><p>AutoCAD 기반 배치 설계, 공사·이사 일정 통합 조율</p></div>
-<div class="i"><h4>IMPACT</h4><p>약 500명 조직개편·사옥 이사/공사 무중단 수행</p></div></div>
+<div class="i"><h4>IMPACT</h4><p><mark class="hl">약 500명 조직개편·사옥 이사/공사 무중단 수행</mark></p></div></div>
 <p class="role"><b>내 역할</b> 프로젝트 총괄·유관 부서 조율</p></article>
 <article class="case" id="case-b"><h3>B. 사무환경 개선·민원 감소</h3><div class="psi">
 <div class="p"><h4>PROBLEM</h4><p>공조·냉방·가습 관련 반복 민원</p></div>
 <div class="s"><h4>SOLUTION</h4><p>입주사 협의체 구성, 냉방 설비 증설, 가습 시스템 정상화</p></div>
-<div class="i"><h4>IMPACT</h4><p>임직원 환경 민원 80% 이상 감소</p></div></div>
+<div class="i"><h4>IMPACT</h4><p><mark class="hl">임직원 환경 민원 80% 이상 감소</mark></p></div></div>
 <p class="role"><b>내 역할</b> 협의체 구성·개선 주도</p></article>
 <article class="case" id="case-c"><h3>C. 반복 업무 자동화</h3><div class="psi">
 <div class="p"><h4>PROBLEM</h4><p>안내 페이지 제작에 반복 단계와 시간 소요</p></div>
 <div class="s"><h4>SOLUTION</h4><p>유의사항 페이지 UI/UX와 작업 흐름을 재설계해 자동화</p></div>
-<div class="i"><h4>IMPACT</h4><p>작업 4단계 → 1단계, 2시간 이상 → 10분 이내</p></div></div>
+<div class="i"><h4>IMPACT</h4><p><mark class="hl">작업 4단계 → 1단계, 2시간 이상 → 10분 이내</mark></p></div></div>
 <p class="role"><b>내 역할</b> 직접 기획·적용 (진학어플라이 재직 시)</p></article>
 <article class="case" id="case-d"><h3>D. 비용 절감</h3><div class="psi">
 <div class="p"><h4>PROBLEM</h4><p>커피캡슐 등 소모품 구매 비용 부담</p></div>
 <div class="s"><h4>SOLUTION</h4><p>공급 업체 변경과 단가 협상</p></div>
-<div class="i"><h4>IMPACT</h4><p>커피캡슐 비용 연 7,000만 원 절감</p></div></div>
+<div class="i"><h4>IMPACT</h4><p><mark class="hl">커피캡슐 비용 연 7,000만 원 절감</mark></p></div></div>
 <p class="role"><b>내 역할</b> 직접 협상·계약 운영</p></article>
 </div>
 </section>
@@ -644,20 +651,20 @@ C. 근거가 없는 경우
 <h2>EXPERIENCE</h2>
 <p class="lead">회사별 핵심만 먼저 보이고, 상세는 펼쳐서 확인할 수 있습니다.</p>
 <div class="exp"><details><summary><span class="y">2024.03 – 2026.03 · 삼우종합건축사사무소</span><div><h3>삼우종합건축사사무소 (950명)_삼성그룹사 | 총무 <span class="role-note">퇴사사유: 계약만료</span></h3><p class="one">950명 규모 본사의 시설·자산·보안·계약 운영과 총무 제규정 정비</p><span class="key">약 500명 조직개편 무중단 수행 · 민원 80%↓ · 연 7천만 원 절감</span></div></summary><div class="det">
-<h4>■ 본사 및 시설 운영</h4><ul><li>본사 시설 운영 총괄 (사무환경, 공조, 보안 등)</li><li>조직개편에 따른 사무공간 재배치 및 이전 프로젝트 총괄 (AutoCAD 기반 설계, 공사·이사 일정 통합 관리)</li><li>물적보안 체계 운영 (보안 장비·인력 통합 관리 및 기준 수립)</li></ul><p class="achievement-label">[성과]</p><ul><li>약 500명 규모 조직개편 및 사옥 공사 무중단 수행</li><li>입주사 협의체 구성 및 공조 시스템 개선 주도</li><li>냉방 설비 증설 및 가습 시스템 정상화</li><li>임직원 환경 민원 80% 이상 감소</li></ul>
+<h4>■ 본사 및 시설 운영</h4><ul><li>본사 시설 운영 총괄 (사무환경, 공조, 보안 등)</li><li>조직개편에 따른 사무공간 재배치 및 이전 프로젝트 총괄 (AutoCAD 기반 설계, 공사·이사 일정 통합 관리)</li><li>물적보안 체계 운영 (보안 장비·인력 통합 관리 및 기준 수립)</li></ul><p class="achievement-label">[성과]</p><ul><li><mark class="hl">약 500명 규모 조직개편 및 사옥 공사 무중단 수행</mark></li><li>입주사 협의체 구성 및 공조 시스템 개선 주도</li><li>냉방 설비 증설 및 가습 시스템 정상화</li><li><mark class="hl">임직원 환경 민원 80% 이상 감소</mark></li></ul>
 <h4>■ 자산 관리 및 행정 운영</h4><ul><li>업무용 차량, 자산, 비품, 전산장비 구매 및 운영 총괄</li><li>법인 콘도·골프회원권 등 자산 운영 및 관리</li><li>공문서 및 계약서 관리, 수행기사 수당 및 운영 기준 개선</li></ul><p class="achievement-label">[성과]</p><ul><li>차량 운영 및 운행일지 체계 개선, 운영 투명성 확보</li><li>자산 운영 기준 정비로 관리 효율성 향상</li></ul>
-<h4>■ 계약 관리 및 비용 통제</h4><ul><li>외부 파트너사 계약 및 운영 (시설, 차량, 복지 등)</li><li>호텔 제휴 및 복지 계약 신규 체결 (신라스테이, 라마다)</li><li>커피캡슐 공급 업체 변경 및 단가 협상</li></ul><p class="achievement-label">[성과]</p><ul><li>커피캡슐 비용 연간 7천만 원 절감</li><li>복지 자산 운영 효율화 및 비용 구조 개선</li></ul>
+<h4>■ 계약 관리 및 비용 통제</h4><ul><li>외부 파트너사 계약 및 운영 (시설, 차량, 복지 등)</li><li>호텔 제휴 및 복지 계약 신규 체결 (신라스테이, 라마다)</li><li>커피캡슐 공급 업체 변경 및 단가 협상</li></ul><p class="achievement-label">[성과]</p><ul><li><mark class="hl">커피캡슐 비용 연간 7천만 원 절감</mark></li><li>복지 자산 운영 효율화 및 비용 구조 개선</li></ul>
 <h4>■ 운영 체계 및 제도 구축 (실행 중심 개선)</h4><ul><li>총무 제규정 수립 및 개정 (출장, 보안, 현장지원 등)</li><li>ERP(K-System) 구축 참여: 출장·숙소·교통비 운영 프로세스 정비</li><li>전사 예산 편성 및 운영 현황 관리</li><li>총무 교육자료 제작</li></ul><p class="achievement-label">[성과]</p><ul><li>총무 업무 프로세스 재정립 및 운영 기준 일원화</li><li>출장 및 현장 지원 운영 효율 개선</li></ul></div></details>
 <details><summary><span class="y">2023.03 – 2024.03 · 세중</span><div><h3>세중 (200명) | 총무 <span class="role-note">퇴사사유: 근무조건</span></h3><p class="one">사옥 임대차·공사·보험 계약과 시설·IT 자산 운영</p><span class="key">계약·시설 운영 체계 정비</span></div></summary><div class="det"><h4>■ 사옥 운영 및 계약 관리</h4><ul><li>부동산 임대차, 공사, 법인 보험 계약 관리</li><li>사무공간 환경 개선 및 시설 운영</li><li>IT 인프라 및 자산 운영 관리</li></ul><p class="achievement-label">[성과]</p><ul><li>계약 및 시설 운영 체계 정비, 안정적인 업무 환경 구축</li></ul><h4>■ 복리후생 및 조직 운영</h4><ul><li>전사 행사 및 복리후생 기획·운영 (야유회, 체육대회 등)</li></ul><p class="achievement-label">[성과]</p><ul><li>구성원 참여도 향상 및 조직 커뮤니케이션 활성화</li></ul></div></details>
 <details><summary><span class="y">2022.12 – 2023.03 · 팜클</span><div><h3>팜클 (105명) | 인사·총무 <span class="role-note">퇴사사유: 상급자의 부재</span></h3><p class="one">1인 총무로 사무공간·자산·보험·인증·법무 통합 관리</p><span class="key">신규 입사자 온보딩 체계 구축</span></div></summary><div class="det"><h4>■ 1인 총무 오너십 기반 운영</h4><ul><li>사무공간 레이아웃 설계 및 환경 개선</li><li>자산, 시설, 보험, 인증, 법무 지원 등 통합 관리</li></ul><p class="achievement-label">[성과]</p><ul><li>신규 입사자 온보딩 체계 구축 및 조직 적응 속도 개선</li><li>사무환경 개선 및 운영 체계 정비</li></ul></div></details>
 <details><summary><span class="y">2021.11 – 2022.04 · 세스코</span><div><h3>세스코 (3,400명) | CRM 데이터 분석 <span class="role-note">퇴사사유: 단기계약직 계약 만료로 인한 실업급여 수급</span></h3><p class="one">CRM 고객·상품 데이터 분석 및 정합성 개선</p><span class="key">데이터 오류 감소, CRM 활용도 향상</span></div></summary><div class="det"><h4>■ 데이터 기반 운영 개선</h4><ul><li>고객 및 상품 데이터 분석 및 정합성 개선</li></ul><p class="achievement-label">[성과]</p><ul><li>데이터 오류 감소 및 CRM 활용도 향상</li></ul></div></details>
-<details><summary><span class="y">2015.05 – 2021.07 · 진학어플라이</span><div><h3>진학어플라이 (180명) | 서비스 운영 및 업무관리 <span class="role-note">퇴사사유: 업직종 전환</span></h3><p class="one">원서접수·합격자관리 서비스 운영 및 부서 업무관리</p><span class="key">6년간 약 900개 서비스 운영 · 작업 4단계→1단계</span></div></summary><div class="det"><h4>■ 온라인 서비스 기획 및 운영 [엑셀 데이터 기반]</h4><ul><li>초·중·고·대학교(원), 공공기관 및 자격시험 원서접수 서비스 운영</li><li>대학 합격자관리시스템 운영</li><li>입시 모의논술 서비스 총괄 운영 및 개선</li></ul><p class="achievement-label">[성과]</p><ul><li>6년간 약 900개 입시·시험 원서접수 서비스 운영</li><li>6년간 약 120개 입시 합격자관리시스템 운영</li><li>한양대 외 11개 대학 모의논술 진행, 운영 기간 중 4개 대학 추가</li></ul><h4>■ 합격자·원서접수 관리 시스템 운영 및 개선</h4><ul><li>합격자 관리 시스템 운영 및 UI/UX 개선</li><li>원서접수 서비스 유의사항 페이지 UI/UX 개선 및 업무자동화 (<a href="#case-c">사례 C 보기</a>)</li><li>개인정보 유출 방지 대응조치 기획 및 실행</li></ul><p class="achievement-label">[성과]</p><ul><li>합격자 관리 시스템 운영 효율화 및 기능 개선을 통한 서비스 매출 증가</li><li>프로세스 간소화 및 업무 효율성 강화 (작업 단계 4단계 → 1단계, 업무시간 2시간 이상 → 10분 이내)</li><li>접수 원서 내 개인정보 유출 문제 방지 및 업무 효율성 증가</li></ul><h4>■ 부서 내 업무관리 매니저 역할 수행</h4><ul><li>신규입사자 업무장비 기본 세팅 및 업무지원 (PC, SW, 사무용품, 사무가구 등)</li><li>부서 내 기본 자산 유지 및 관리 (PC, SW, 폰트, 공용문서 등)</li><li>부서 내 문서관리 체계화 (공용폴더 활용 및 관리체계 정립)</li><li>신입사원 온보딩 지원 (공채, 인턴, 아르바이트)</li></ul><p class="achievement-label">[성과]</p><ul><li>60명 이상의 신규입사자 기본 업무세팅 진행 (신입 10명, 경력 20명, 인턴 37명)</li><li>부서 내 기본 자산의 효과적인 관리 체계 수립</li><li>불필요 문서 정리 및 필요 문서 열람 간편화로 문서관리 효율성 증가</li><li>신입사원 조기 업무 적응 및 조직문화 융화 지원</li></ul></div></details></div>
+<details><summary><span class="y">2015.05 – 2021.07 · 진학어플라이</span><div><h3>진학어플라이 (180명) | 서비스 운영 및 업무관리 <span class="role-note">퇴사사유: 업직종 전환</span></h3><p class="one">원서접수·합격자관리 서비스 운영 및 부서 업무관리</p><span class="key">6년간 약 900개 서비스 운영 · 작업 4단계→1단계</span></div></summary><div class="det"><h4>■ 온라인 서비스 기획 및 운영 [엑셀 데이터 기반]</h4><ul><li>초·중·고·대학교(원), 공공기관 및 자격시험 원서접수 서비스 운영</li><li>대학 합격자관리시스템 운영</li><li>입시 모의논술 서비스 총괄 운영 및 개선</li></ul><p class="achievement-label">[성과]</p><ul><li><mark class="hl">6년간 약 900개 입시·시험 원서접수 서비스 운영</mark></li><li><mark class="hl">6년간 약 120개 입시 합격자관리시스템 운영</mark></li><li>한양대 외 11개 대학 모의논술 진행, 운영 기간 중 4개 대학 추가</li></ul><h4>■ 합격자·원서접수 관리 시스템 운영 및 개선</h4><ul><li>합격자 관리 시스템 운영 및 UI/UX 개선</li><li>원서접수 서비스 유의사항 페이지 UI/UX 개선 및 업무자동화 (<a href="#case-c">사례 C 보기</a>)</li><li>개인정보 유출 방지 대응조치 기획 및 실행</li></ul><p class="achievement-label">[성과]</p><ul><li>합격자 관리 시스템 운영 효율화 및 기능 개선을 통한 서비스 매출 증가</li><li>프로세스 간소화 및 업무 효율성 강화 (<mark class="hl">작업 단계 4단계 → 1단계, 업무시간 2시간 이상 → 10분 이내</mark>)</li><li>접수 원서 내 개인정보 유출 문제 방지 및 업무 효율성 증가</li></ul><h4>■ 부서 내 업무관리 매니저 역할 수행</h4><ul><li>신규입사자 업무장비 기본 세팅 및 업무지원 (PC, SW, 사무용품, 사무가구 등)</li><li>부서 내 기본 자산 유지 및 관리 (PC, SW, 폰트, 공용문서 등)</li><li>부서 내 문서관리 체계화 (공용폴더 활용 및 관리체계 정립)</li><li>신입사원 온보딩 지원 (공채, 인턴, 아르바이트)</li></ul><p class="achievement-label">[성과]</p><ul><li><mark class="hl">60명 이상의 신규입사자 기본 업무세팅 진행</mark> (신입 10명, 경력 20명, 인턴 37명)</li><li>부서 내 기본 자산의 효과적인 관리 체계 수립</li><li>불필요 문서 정리 및 필요 문서 열람 간편화로 문서관리 효율성 증가</li><li>신입사원 조기 업무 적응 및 조직문화 융화 지원</li></ul></div></details></div>
 </section>
 
 <!-- PROFILE -->
 <section class="about">
-<div><h2>처리하는 사람을 넘어<br>개선하는 사람으로.</h2><p>요청을 처리하는 데 그치지 않고, 기준을 만들고 관계자를 연결하며 운영 방식을 계속 개선합니다. AI도 그 목표를 위한 도구로 활용합니다.</p></div>
-<div class="str"><div><b>소통</b>상대의 맥락을 파악하고 조율합니다.</div><div><b>구조화</b>반복되는 일을 기준과 절차로 정리합니다.</div><div><b>실행</b>생각에 그치지 않고 즉시 진행합니다.</div></div>
+<div><h2>처리하는 사람을 넘어<br>개선하는 사람으로.</h2><p>요청을 처리하는 데 그치지 않고, <mark class="hl">기준을 만들고 관계자를 연결하며 운영 방식을 계속 개선</mark>합니다. AI도 그 목표를 위한 도구로 활용합니다.</p></div>
+<div class="str"><div><b><mark class="hl">소통</mark></b>상대의 맥락을 파악하고 조율합니다.</div><div><b><mark class="hl">구조화</mark></b>반복되는 일을 기준과 절차로 정리합니다.</div><div><b><mark class="hl">실행</mark></b>생각에 그치지 않고 즉시 진행합니다.</div></div>
 </section>
 </main>
 
@@ -688,12 +695,12 @@ showF(0);
 
 /* ===== 챗봇 데모 : 가상 규정 (실제 규정으로 교체하려면 REG 배열을 수정) ===== */
 const REG=[
-{k:["출장","숙박","숙소","호텔"],a:"국내 출장 숙박비는 직급별 상한 내에서 실비로 정산하며, 상한을 넘기면 사전 승인이 필요합니다.",s:"㈜샘플 출장규정 제8조 ②항"},
-{k:["교통","ktx","기차","택시","항공"],a:"교통비는 대중교통을 원칙으로 하고, 택시·항공 이용은 사유를 적어 승인받은 경우에 인정합니다.",s:"㈜샘플 출장규정 제9조"},
-{k:["경조","결혼","조의","부고","화환"],a:"본인·가족의 경조 사유 발생 시 경조금과 화환을 지원하며, 증빙은 사유 발생일로부터 30일 이내 제출합니다.",s:"㈜샘플 복리후생규정 제14조"},
-{k:["구매","비품","물품","발주"],a:"비품 구매는 구매 요청서 제출 후 부서장 승인을 거쳐 총무팀이 일괄 발주합니다.",s:"㈜샘플 구매규정 제5조 ①항"},
-{k:["차량","법인차","운행","주행"],a:"법인차량은 사전 예약·승인 후 사용하며, 운행 종료 시 주행거리를 운행일지에 기록해야 합니다.",s:"㈜샘플 차량관리규정 제6조"},
-{k:["보안","출입","출입증","방문"],a:"방문자는 사전 등록 후 방문증을 발급받아 임직원 동행 하에 출입할 수 있습니다.",s:"㈜샘플 보안규정 제11조"}];
+{k:["출장","숙박","숙소","호텔"],a:"국내 출장 숙박비는 직급별 상한 내에서 실비로 정산하며, 상한을 넘기면 사전 승인이 필요합니다.",s:"㈜재열 출장규정 제8조 ②항"},
+{k:["교통","ktx","기차","택시","항공"],a:"교통비는 대중교통을 원칙으로 하고, 택시·항공 이용은 사유를 적어 승인받은 경우에 인정합니다.",s:"㈜재열 출장규정 제9조"},
+{k:["경조","결혼","조의","부고","화환"],a:"본인·가족의 경조 사유 발생 시 경조금과 화환을 지원하며, 증빙은 사유 발생일로부터 30일 이내 제출합니다.",s:"㈜재열 복리후생규정 제14조"},
+{k:["구매","비품","물품","발주"],a:"비품 구매는 구매 요청서 제출 후 부서장 승인을 거쳐 총무팀이 일괄 발주합니다.",s:"㈜재열 구매규정 제5조 ①항"},
+{k:["차량","법인차","운행","주행"],a:"법인차량은 사전 예약·승인 후 사용하며, 운행 종료 시 주행거리를 운행일지에 기록해야 합니다.",s:"㈜재열 차량관리규정 제6조"},
+{k:["보안","출입","출입증","방문"],a:"방문자는 사전 등록 후 방문증을 발급받아 임직원 동행 하에 출입할 수 있습니다.",s:"㈜재열 보안규정 제11조"}];
 const ch=$("#chat");
 function say(t,c,s){const b=el("div","bub "+c,t);if(s)b.append(el("span","src","근거: "+s));ch.append(b);ch.scrollTop=ch.scrollHeight}
 function ask(t){t=t.trim();if(!t)return;say(t,"u");const q=t.toLowerCase();let best=null,sc=0;
