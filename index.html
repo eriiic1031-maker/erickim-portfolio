@@ -45,6 +45,7 @@ h2{font-size:clamp(28px,4vw,48px);line-height:1.15;letter-spacing:-.07em;margin:
 .pains{display:grid;gap:8px;margin:0 0 14px}.pain{display:grid;grid-template-columns:1fr 28px 1fr;gap:8px;align-items:center}.pain .q{background:#ecece6;padding:12px 16px;border-radius:12px;font-size:14px}.pain .a{background:var(--lime);padding:12px 16px;border-radius:12px;font-weight:700;font-size:14px}.pain i{font-style:normal;text-align:center;font-size:20px}
 .impact{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 22px}.impact b{font-size:13px;color:#4c7a00;margin-right:4px}.impact span{background:#fff;border:1px solid var(--line);border-radius:20px;padding:3px 12px;font-size:13px}
 .more{margin-top:16px}.more>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;border:1.5px solid var(--ink);border-radius:30px;padding:7px 18px;background:#fff}.more>summary::-webkit-details-marker{display:none}.more>summary::after{content:"+";font-size:18px;line-height:1}.more[open]>summary::after{content:"−"}.more[open] .o,.more:not([open]) .c{display:none}.more-body{padding-top:20px}
+.vid{display:none;position:relative;max-width:960px;margin:18px 0 6px;border:1.5px solid var(--ink);border-radius:16px;overflow:hidden;background:#111;box-shadow:5px 5px 0 var(--ink);cursor:pointer}.vid.on{display:block}.vid video{display:block;width:100%;height:auto}.vid .cap{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 16px;background:linear-gradient(transparent,#000a);font-weight:800;font-size:clamp(14px,2vw,21px);line-height:1.5;pointer-events:none}.vid .cap span{background:var(--lime);color:var(--ink);padding:2px 10px;border-radius:6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}.vid .vtag{position:absolute;left:12px;top:12px;background:#000b;color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;pointer-events:none}.vid .play{position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border:2px solid var(--ink);border-radius:50%;background:var(--lime);font-size:24px;cursor:pointer}.vid.playing .play{display:none}
 .value{font-size:clamp(17px,2vw,22px);font-weight:700;margin:0 0 18px}
 .b{font-size:12px;font-weight:700;padding:2px 10px;border-radius:20px;border:1px solid var(--ink);background:#fff;white-space:nowrap}
 .b.run{background:var(--lime)}.b.proto{background:var(--blue)}.b.plan{background:var(--peach)}
@@ -89,6 +90,49 @@ footer{background:var(--ink);color:#fff;padding:60px 0 36px}footer h2{color:#fff
 .ct{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:24px;font-weight:700}.ct a:hover{color:var(--lime)}.small{font-size:12px;color:#a9aba2;margin-top:22px;max-width:60em}
 @media(max-width:820px){.hero,.shot,.about{grid-template-columns:1fr}.photo{margin-top:22px}.photo{order:-1;width:min(70%,300px)}.facts{grid-template-columns:1fr 1fr}.fact:nth-child(2){border:0}.fact:nth-child(-n+2){border-bottom:1px solid var(--line)}.psi,.cases,.guide,.state,.feat{grid-template-columns:1fr}.ba{flex-direction:column}.pain{grid-template-columns:1fr}.pain i{transform:rotate(90deg)}.ba i{transform:rotate(90deg)}.exp summary{grid-template-columns:1fr 24px}.exp .y{grid-column:1/-1}.det{padding-left:0}.kp{grid-template-columns:repeat(2,1fr)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* ===== 임대차 사용 가이드 (모달) ===== */
+.cta.cta-2{background:#fff}
+dialog.gd{padding:0;border:2px solid var(--ink);border-radius:20px;width:min(1120px,96vw);height:min(92vh,92dvh);max-width:none;max-height:none;background:var(--bg);color:var(--ink);box-shadow:8px 8px 0 var(--ink);overflow:hidden}
+dialog.gd[open]{display:flex;flex-direction:column}
+dialog.gd::backdrop{background:#171815b3}
+.g-head{flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px clamp(16px,3vw,32px);background:var(--lime);border-bottom:2px solid var(--ink)}
+.g-head b{font:800 clamp(15px,2vw,19px)/1.3 "DM Sans","Noto Sans KR";letter-spacing:-.04em}.g-head small{display:block;font-weight:500;font-size:12px;color:#3a3c33}
+.g-x{flex:none;border:1.5px solid var(--ink);background:#fff;border-radius:30px;padding:6px 16px;font-weight:800;font-size:14px}
+.g-nav{flex:none;display:flex;gap:6px;overflow-x:auto;padding:10px clamp(16px,3vw,32px);background:#f8f8f5;border-bottom:1px solid var(--line);scrollbar-width:thin}
+.g-nav button{flex:none;border:1.5px solid var(--ink);background:#fff;border-radius:30px;padding:5px 14px;font-size:13px;font-weight:700;white-space:nowrap}
+.g-nav button.on{background:var(--ink);color:#fff}
+.g-body{flex:1;overflow:auto;padding:clamp(18px,3vw,36px) clamp(16px,3vw,36px) 48px;scroll-behavior:smooth;overscroll-behavior:contain}
+.g-intro{margin:0 0 22px}.g-intro h2{font-size:clamp(24px,3.4vw,38px);margin:0 0 8px}.g-intro p{margin:0;color:var(--muted);max-width:44em}
+.g-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:18px 0 0;padding:0;list-style:none;counter-reset:s}
+.g-flow li{counter-increment:s;background:#fff;border:1.5px solid var(--ink);border-radius:14px;padding:10px 14px;font-weight:800;font-size:14px;line-height:1.4;display:flex;gap:10px;align-items:center}
+.g-flow li:before{content:counter(s);flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--lime);border:1.5px solid var(--ink);font:800 13px "DM Sans"}
+.g-flow small{display:block;font-weight:500;color:var(--muted);font-size:12px}
+.gsec{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,340px);gap:clamp(18px,3vw,40px);border-top:1.5px solid var(--ink);padding:26px 0 34px}
+.gsec.nofig{grid-template-columns:1fr}
+.gsec h3{margin:0 0 10px;font-size:clamp(20px,2.6vw,28px);letter-spacing:-.06em;display:flex;gap:10px;align-items:center}
+.gsec h3 i{font:800 14px "DM Sans";font-style:normal;background:var(--ink);color:#fff;border-radius:30px;padding:3px 12px;white-space:nowrap}
+.gsec p{margin:0 0 12px}.gsec h4{margin:18px 0 6px;font-size:15px;font-weight:800}
+.gsec ul{margin:0 0 12px;padding-left:18px}.gsec li{margin:4px 0}
+.gt{width:100%;border-collapse:collapse;font-size:14px;margin:0 0 14px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.gt th{background:#f1f2ed;text-align:left;font-weight:800;padding:8px 12px;border-bottom:1.5px solid var(--ink);white-space:nowrap}
+.gt td{padding:8px 12px;border-top:1px solid #e6e6e1;vertical-align:top}.gt td:first-child{font-weight:700;white-space:nowrap}
+.gbox{background:#fff;border:1.5px solid var(--ink);border-left-width:6px;border-radius:12px;padding:12px 16px;margin:0 0 14px;font-size:14px}.gbox b{display:block;margin-bottom:2px}
+.gbox.warn{border-left-color:#e07a3c;background:#fff7f0}.gbox.tip{border-left-color:var(--lime);background:#fbffe8}.gbox.info{border-left-color:#2556b8;background:#f3f7ff}
+.gfigs{display:flex;flex-direction:column;gap:18px;align-self:start;position:sticky;top:0}
+.gfig{margin:0}.gfig button{display:block;width:100%;padding:0;border:1.5px solid var(--ink);border-radius:12px;overflow:hidden;background:#fff;box-shadow:4px 4px 0 var(--ink);cursor:zoom-in}
+.gfig img{display:block;width:100%;height:auto}
+.gfig figcaption{font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.6}.gfig figcaption b{color:var(--ink)}
+.gn{display:inline-grid;place-items:center;width:17px;height:17px;border-radius:50%;background:#d6204b;color:#fff;font:800 10.5px/1 "DM Sans";margin:0 2px 0 4px;vertical-align:1px}
+.gzoom{font-size:11.5px;color:var(--muted);margin-top:4px}
+dialog.lb{padding:0;border:0;background:transparent;max-width:none;max-height:none;width:100vw;height:100dvh}
+dialog.lb[open]{display:grid;place-items:center}dialog.lb::backdrop{background:#000d}
+.lb-in{position:relative;max-width:96vw;max-height:94dvh;overflow:auto;border-radius:12px;background:#fff}.lb-in img{display:block;max-width:none;width:min(1100px,94vw);height:auto}
+.lb-x{position:fixed;right:14px;top:14px;border:1.5px solid var(--ink);background:var(--lime);border-radius:30px;padding:7px 18px;font-weight:800}
+@media(max-width:820px){
+dialog.gd{width:100vw;height:100dvh;border-radius:0;border:0;box-shadow:none}
+.g-flow{grid-template-columns:1fr 1fr}.gsec{grid-template-columns:1fr}.gfigs{position:static;flex-direction:row;flex-wrap:wrap;justify-content:center}.gfig{width:min(100%,340px)}
+.gt td:first-child{white-space:normal}}
+@media(prefers-reduced-motion:reduce){.g-body{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -124,7 +168,8 @@ footer{background:var(--ink);color:#fff;padding:60px 0 36px}footer h2{color:#fff
 <h3>(AI) 임대차 건물 분석 시스템 <span class="b proto">프로토타입</span></h3>
 <p class="value">임대 비용과 입지를 <mark class="hl">주변 건물과 함께 비교</mark></p>
 <p class="desc">임대 조건을 NOC로 계산해 시세·입지와 함께 비교하는 임대차 분석 프로토타입입니다.</p>
-<div class="cta-row"><a class="cta" href="https://rental-intelligence-okw4.onrender.com/" target="_blank" rel="noopener">▶ (AI) 임대차 건물 분석 시스템 바로가기 <span aria-hidden="true">↗</span></a><span class="cta-note">새 창에서 열립니다 · 처음 열 때 로딩에 시간이 걸릴 수 있습니다</span></div>
+<div class="vid" data-src="videos/rental.mp4" data-poster="videos/rental.jpg" data-label="(AI) 임대차 건물 분석 시스템 시연 영상" data-caps='[[0, 6, "건물을 검색하고 임대 조건을 입력합니다"], [6, 14, "숨은 비용까지 반영한 실효 NOC를 계산합니다"], [14, 22, "권역 시세와 비교하고 협상안을 시뮬레이션합니다"], [22, 30, "역 도보·상권·유동인구·일조를 지도에서 분석합니다"], [30, 40, "후보 건물을 총비용과 점수로 비교합니다"]]'></div>
+<div class="cta-row"><a class="cta" href="https://rental-intelligence-okw4.onrender.com/" target="_blank" rel="noopener">▶ (AI) 임대차 건물 분석 시스템 바로가기 <span aria-hidden="true">↗</span></a><button type="button" class="cta cta-sm cta-2" data-guide>📖 사용 가이드 보기</button><span class="cta-note">새 창에서 열립니다 · 처음 열 때 로딩에 시간이 걸릴 수 있습니다</span></div>
 <details class="more"><summary><span class="o">자세히 보기</span><span class="c">접기</span></summary><div class="more-body">
 <h4 class="feat-h">이런 어려움을 해결합니다</h4>
 <div class="pains"><div class="pain"><span class="q">임대료가 시세 대비 적정한지 알기 어렵다</span><i>→</i><span class="a">한국부동산원 권역 시세와 내 NOC 비교</span></div><div class="pain"><span class="q">렌트프리·인상률 등 숨은 비용까지 계산하기 번거롭다</span><i>→</i><span class="a">실효 NOC·총비용 자동 계산</span></div><div class="pain"><span class="q">입지 비교가 주관적이다</span><i>→</i><span class="a">역 도보·상권·유동인구·일조를 점수로 비교</span></div><div class="pain"><span class="q">제안서를 읽고 비교표로 옮기는 데 시간이 든다</span><i>→</i><span class="a">제안서(PDF·사진) AI 자동 입력·CSV 가져오기</span></div><div class="pain"><span class="q">협상 근거가 부족하다</span><i>→</i><span class="a">목표 NOC 기준 협상 시뮬레이터</span></div></div>
@@ -139,6 +184,7 @@ footer{background:var(--ink);color:#fff;padding:60px 0 36px}footer h2{color:#fff
 <h3>(AI) 자산관리 프로그램 <span class="b proto">프로토타입</span></h3>
 <p class="value">자산 현황·이력·알림을 <mark class="hl">한 화면에서 점검</mark></p>
 <p class="desc">6개 역할별 메뉴로 자산 등록·결재·점검·재물조사·처분·결산까지 관리하는 프로토타입입니다.</p>
+<div class="vid" data-src="videos/asset.mp4" data-poster="videos/asset.jpg" data-label="(AI) 자산관리 프로그램 시연 영상" data-caps='[[0, 8, "역할을 고르면 메뉴가 달라집니다"], [8, 16, "자산대장과 QR 스캔으로 자산을 찾습니다"], [16, 24, "구매 결재와 처분 검토를 단계별로 처리합니다"], [24, 32, "알림·감가상각·분석을 한곳에서 확인합니다"]]'></div>
 <div class="cta-row"><a class="cta" href="https://asset-manager-demo.streamlit.app/alerts" target="_blank" rel="noopener">▶ (AI) 자산관리 프로그램 바로가기 <span aria-hidden="true">↗</span></a><span class="cta-note">새 창에서 열립니다 · 처음 열 때 로딩에 시간이 걸릴 수 있습니다</span></div>
 <details class="more"><summary><span class="o">자세히 보기</span><span class="c">접기</span></summary><div class="more-body">
 <h4 class="feat-h">이런 어려움을 해결합니다</h4>
@@ -154,6 +200,7 @@ footer{background:var(--ink);color:#fff;padding:60px 0 36px}footer h2{color:#fff
 <h3>(AI) 차량관리 프로그램 <span class="b proto">프로토타입</span></h3>
 <p class="value">차량 운영의 분산된 업무를 <mark class="hl">하나의 관리 흐름으로</mark></p>
 <p class="desc">차량 현황·예약·정비·운행기록 업무를 개선하려고 직접 기획·구현한 법인차량 관리 프로토타입입니다.</p>
+<div class="vid" data-src="videos/fleet.mp4" data-poster="videos/fleet.jpg" data-label="(AI) 차량관리 프로그램 시연 영상" data-caps='[[0, 8, "차량 현황을 한곳에서 확인합니다"], [8, 16, "예약부터 승인까지 한 흐름으로 관리합니다"], [16, 24, "AI 예약으로 일정을 말하면 차량을 추천합니다"], [24, 32, "운행기록과 정비 이력을 데이터로 관리합니다"]]'></div>
 <div class="cta-row"><a class="cta" href="https://corporate-vehicle-management-ai-k4mwfhxx3mhekf4mrnxqe7.streamlit.app/" target="_blank" rel="noopener">▶ (AI) 차량관리 프로그램 바로가기 <span aria-hidden="true">↗</span></a><span class="cta-note">새 창에서 열립니다 · 처음 열 때 로딩에 시간이 걸릴 수 있습니다</span></div>
 <details class="more"><summary><span class="o">자세히 보기</span><span class="c">접기</span></summary><div class="more-body">
 <div class="psi">
@@ -691,14 +738,14 @@ C. 근거가 없는 경우
 <section class="sec" id="experience">
 <h2>EXPERIENCE</h2>
 <p class="lead">회사별 핵심만 먼저 보이고, 상세는 펼쳐서 확인할 수 있습니다.</p>
-<div class="exp"><details><summary><span class="y">2024.03 – 2026.03 · 삼우종합건축사사무소</span><div><h3>삼우종합건축사사무소 (950명)_삼성그룹사 | 총무 <span class="role-note">퇴사사유: 계약종료</span></h3><p class="one">950명 규모 본사의 시설·자산·보안·계약 운영과 총무 제규정 정비</p><span class="key">약 500명 조직개편 무중단 수행 · 민원 80%↓ · 연 7천만 원 절감</span></div></summary><div class="det">
+<div class="exp"><details><summary><span class="y">2024.03 – 2026.03 · 삼우종합건축사사무소</span><div><h3>삼우종합건축사사무소 (950명)_삼성그룹사 | 총무 <span class="role-note">퇴사사유: 계약만료</span></h3><p class="one">950명 규모 본사의 시설·자산·보안·계약 운영과 총무 제규정 정비</p><span class="key">약 500명 조직개편 무중단 수행 · 민원 80%↓ · 연 7천만 원 절감</span></div></summary><div class="det">
 <h4>■ 본사 및 시설 운영</h4><ul><li>본사 시설 운영 총괄 (사무환경, 공조, 보안 등)</li><li>조직개편에 따른 사무공간 재배치 및 이전 프로젝트 총괄 (AutoCAD 기반 설계, 공사·이사 일정 통합 관리)</li><li>물적보안 체계 운영 (보안 장비·인력 통합 관리 및 기준 수립)</li></ul><p class="achievement-label">[성과]</p><ul><li><mark class="hl">약 500명 규모 조직개편 및 사옥 공사 무중단 수행</mark></li><li>입주사 협의체 구성 및 공조 시스템 개선 주도</li><li>냉방 설비 증설 및 가습 시스템 정상화</li><li><mark class="hl">임직원 환경 민원 80% 이상 감소</mark></li></ul>
 <h4>■ 자산 관리 및 행정 운영</h4><ul><li>업무용 차량, 자산, 비품, 전산장비 구매 및 운영 총괄</li><li>법인 콘도·골프회원권 등 자산 운영 및 관리</li><li>공문서 및 계약서 관리, 수행기사 수당 및 운영 기준 개선</li></ul><p class="achievement-label">[성과]</p><ul><li>차량 운영 및 운행일지 체계 개선, 운영 투명성 확보</li><li>자산 운영 기준 정비로 관리 효율성 향상</li></ul>
 <h4>■ 계약 관리 및 비용 통제</h4><ul><li>외부 파트너사 계약 및 운영 (시설, 차량, 복지 등)</li><li>호텔 제휴 및 복지 계약 신규 체결 (신라스테이, 라마다)</li><li>커피캡슐 공급 업체 변경 및 단가 협상</li></ul><p class="achievement-label">[성과]</p><ul><li><mark class="hl">커피캡슐 비용 연간 7천만 원 절감</mark></li><li>복지 자산 운영 효율화 및 비용 구조 개선</li></ul>
 <h4>■ 운영 체계 및 제도 구축 (실행 중심 개선)</h4><ul><li>총무 제규정 수립 및 개정 (출장, 보안, 현장지원 등)</li><li>ERP(K-System) 구축 참여: 출장·숙소·교통비 운영 프로세스 정비</li><li>전사 예산 편성 및 운영 현황 관리</li><li>총무 교육자료 제작</li></ul><p class="achievement-label">[성과]</p><ul><li>총무 업무 프로세스 재정립 및 운영 기준 일원화</li><li>출장 및 현장 지원 운영 효율 개선</li></ul></div></details>
-<details><summary><span class="y">2023.03 – 2024.03 · 세중</span><div><h3>세중 (200명) | 총무 <span class="role-note">퇴사사유: 근무 환경의 한계로 1년간 실무 기반을 다진 뒤 역량을 확장할 수 있는 환경을 찾아 이직</span></h3><p class="one">사옥 임대차·공사·보험 계약과 시설·IT 자산 운영</p><span class="key">계약·시설 운영 체계 정비</span></div></summary><div class="det"><h4>■ 사옥 운영 및 계약 관리</h4><ul><li>부동산 임대차, 공사, 법인 보험 계약 관리</li><li>사무공간 환경 개선 및 시설 운영</li><li>IT 인프라 및 자산 운영 관리</li></ul><p class="achievement-label">[성과]</p><ul><li>계약 및 시설 운영 체계 정비, 안정적인 업무 환경 구축</li></ul><h4>■ 복리후생 및 조직 운영</h4><ul><li>전사 행사 및 복리후생 기획·운영 (야유회, 체육대회 등)</li></ul><p class="achievement-label">[성과]</p><ul><li>구성원 참여도 향상 및 조직 커뮤니케이션 활성화</li></ul></div></details>
+<details><summary><span class="y">2023.03 – 2024.03 · 세중</span><div><h3>세중 (200명) | 총무 <span class="role-note">퇴사사유: 근무조건</span></h3><p class="one">사옥 임대차·공사·보험 계약과 시설·IT 자산 운영</p><span class="key">계약·시설 운영 체계 정비</span></div></summary><div class="det"><h4>■ 사옥 운영 및 계약 관리</h4><ul><li>부동산 임대차, 공사, 법인 보험 계약 관리</li><li>사무공간 환경 개선 및 시설 운영</li><li>IT 인프라 및 자산 운영 관리</li></ul><p class="achievement-label">[성과]</p><ul><li>계약 및 시설 운영 체계 정비, 안정적인 업무 환경 구축</li></ul><h4>■ 복리후생 및 조직 운영</h4><ul><li>전사 행사 및 복리후생 기획·운영 (야유회, 체육대회 등)</li></ul><p class="achievement-label">[성과]</p><ul><li>구성원 참여도 향상 및 조직 커뮤니케이션 활성화</li></ul></div></details>
 <details><summary><span class="y">2022.12 – 2023.03 · 팜클</span><div><h3>팜클 (105명) | 인사·총무 <span class="role-note">퇴사사유: 상급자의 부재</span></h3><p class="one">1인 총무로 사무공간·자산·보험·인증·법무 통합 관리</p><span class="key">신규 입사자 온보딩 체계 구축</span></div></summary><div class="det"><h4>■ 1인 총무 오너십 기반 운영</h4><ul><li>사무공간 레이아웃 설계 및 환경 개선</li><li>자산, 시설, 보험, 인증, 법무 지원 등 통합 관리</li></ul><p class="achievement-label">[성과]</p><ul><li>신규 입사자 온보딩 체계 구축 및 조직 적응 속도 개선</li><li>사무환경 개선 및 운영 체계 정비</li></ul></div></details>
-<details><summary><span class="y">2021.11 – 2022.04 · 세스코</span><div><h3>세스코 (3,400명) | CRM 데이터 분석 <span class="role-note">퇴사사유: 계약종료</span></h3><p class="one">CRM 고객·상품 데이터 분석 및 정합성 개선</p><span class="key">데이터 오류 감소, CRM 활용도 향상</span></div></summary><div class="det"><h4>■ 데이터 기반 운영 개선</h4><ul><li>고객 및 상품 데이터 분석 및 정합성 개선</li></ul><p class="achievement-label">[성과]</p><ul><li>데이터 오류 감소 및 CRM 활용도 향상</li></ul></div></details>
+<details><summary><span class="y">2021.11 – 2022.04 · 세스코</span><div><h3>세스코 (3,400명) | CRM 데이터 분석 <span class="role-note">퇴사사유: 단기계약직 계약 만료로 인한 실업급여 수급</span></h3><p class="one">CRM 고객·상품 데이터 분석 및 정합성 개선</p><span class="key">데이터 오류 감소, CRM 활용도 향상</span></div></summary><div class="det"><h4>■ 데이터 기반 운영 개선</h4><ul><li>고객 및 상품 데이터 분석 및 정합성 개선</li></ul><p class="achievement-label">[성과]</p><ul><li>데이터 오류 감소 및 CRM 활용도 향상</li></ul></div></details>
 <details><summary><span class="y">2015.05 – 2021.07 · 진학어플라이</span><div><h3>진학어플라이 (180명) | 서비스 운영 및 업무관리 <span class="role-note">퇴사사유: 업직종 전환</span></h3><p class="one">원서접수·합격자관리 서비스 운영 및 부서 업무관리</p><span class="key">6년간 약 900개 서비스 운영 · 작업 4단계→1단계</span></div></summary><div class="det"><h4>■ 온라인 서비스 기획 및 운영 [엑셀 데이터 기반]</h4><ul><li>초·중·고·대학교(원), 공공기관 및 자격시험 원서접수 서비스 운영</li><li>대학 합격자관리시스템 운영</li><li>입시 모의논술 서비스 총괄 운영 및 개선</li></ul><p class="achievement-label">[성과]</p><ul><li><mark class="hl">6년간 약 900개 입시·시험 원서접수 서비스 운영</mark></li><li><mark class="hl">6년간 약 120개 입시 합격자관리시스템 운영</mark></li><li>한양대 외 11개 대학 모의논술 진행, 운영 기간 중 4개 대학 추가</li></ul><h4>■ 합격자·원서접수 관리 시스템 운영 및 개선</h4><ul><li>합격자 관리 시스템 운영 및 UI/UX 개선</li><li>원서접수 서비스 유의사항 페이지 UI/UX 개선 및 업무자동화 (<a href="#case-c">사례 C 보기</a>)</li><li>개인정보 유출 방지 대응조치 기획 및 실행</li></ul><p class="achievement-label">[성과]</p><ul><li>합격자 관리 시스템 운영 효율화 및 기능 개선을 통한 서비스 매출 증가</li><li>프로세스 간소화 및 업무 효율성 강화 (<mark class="hl">작업 단계 4단계 → 1단계, 업무시간 2시간 이상 → 10분 이내</mark>)</li><li>접수 원서 내 개인정보 유출 문제 방지 및 업무 효율성 증가</li></ul><h4>■ 부서 내 업무관리 매니저 역할 수행</h4><ul><li>신규입사자 업무장비 기본 세팅 및 업무지원 (PC, SW, 사무용품, 사무가구 등)</li><li>부서 내 기본 자산 유지 및 관리 (PC, SW, 폰트, 공용문서 등)</li><li>부서 내 문서관리 체계화 (공용폴더 활용 및 관리체계 정립)</li><li>신입사원 온보딩 지원 (공채, 인턴, 아르바이트)</li></ul><p class="achievement-label">[성과]</p><ul><li><mark class="hl">60명 이상의 신규입사자 기본 업무세팅 진행</mark> (신입 10명, 경력 20명, 인턴 37명)</li><li>부서 내 기본 자산의 효과적인 관리 체계 수립</li><li>불필요 문서 정리 및 필요 문서 열람 간편화로 문서관리 효율성 증가</li><li>신입사원 조기 업무 적응 및 조직문화 융화 지원</li></ul></div></details></div>
 </section>
 
@@ -767,6 +814,99 @@ mkDemo("#rtabs","#rh","#rc","#rs",[
 ["시세·협상","권역 시세와 내 NOC를 비교하고 협상안을 시뮬레이션합니다.","한국부동산원 R-ONE의 권역별 오피스 임대료·공실률·임대가격지수와 내 NOC를 비교하고, 목표 NOC를 정해 협상 시나리오를 봅니다.",tb([["권역 평균 임대료","분기 시계열","시세"],["내 실효 NOC","시세 대비 +3%","확인"],["목표 NOC 달성","임대료 -4% · 렌트프리 +1개월","시나리오"]])],
 ["입지 분석","역 접근성·상권·유동인구·일조를 한 번에 봅니다.","가까운 역·출입구까지 도보 시간, 상권 구성, 서울시 실시간 유동인구, 시간대별 일조·그림자를 지도에서 분석합니다.",kp([["가까운 역","도보 5분"],["상권","음식·카페"],["유동인구","보통"],["일조","확인"]])],
 ["후보 비교","후보 건물을 총비용과 점수로 비교합니다.","후보 건물을 입력·CSV·제안서로 모아 총비용과 종합 점수로 비교하고, 비슷한 건물 찾기와 AI 질문으로 후보를 좁힙니다.",tb([["내 건물","47,800","기준"],["후보 B","45,200","점수 82"],["후보 C","49,900","점수 74"]])]],"rental");
+
+/* ===== 시연 영상: videos/rental.mp4, asset.mp4, fleet.mp4 (+ 같은 이름의 .jpg 포스터). 파일이 없으면 영역이 보이지 않습니다.
+   자막 시간(초)은 data-caps 의 [시작, 끝, 문구] 를 영상에 맞게 고치세요. ===== */
+document.querySelectorAll(".vid").forEach(box=>{
+ let caps=[];try{caps=JSON.parse(box.dataset.caps||"[]")}catch(e){}
+ const v=document.createElement("video");v.muted=true;v.loop=true;v.playsInline=true;v.preload="metadata";v.setAttribute("aria-label",box.dataset.label||"시연 영상");
+ if(box.dataset.poster)v.poster=box.dataset.poster;
+ const cap=el("div","cap"),tag=el("span","vtag","데모 영상 · 소리 없음"),btn=el("button","play","▶");btn.type="button";btn.setAttribute("aria-label","재생");
+ box.append(v,cap,tag,btn);
+ const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+ const toggle=()=>{v.paused?v.play().catch(()=>{}):v.pause()};
+ v.addEventListener("loadedmetadata",()=>box.classList.add("on"));
+ v.addEventListener("error",()=>box.classList.remove("on"));
+ v.addEventListener("play",()=>box.classList.add("playing"));
+ v.addEventListener("pause",()=>box.classList.remove("playing"));
+ v.addEventListener("timeupdate",()=>{const t=v.currentTime,c=caps.find(x=>t>=x[0]&&t<x[1]);cap.textContent="";if(c)cap.append(el("span",null,c[2]))});
+ box.addEventListener("click",toggle);
+ if("IntersectionObserver" in window&&!reduce)new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)v.play().catch(()=>{});else v.pause()}),{threshold:.5}).observe(box);
+ v.src=box.dataset.src;
+});
+</script>
+<dialog class="gd" id="gd" aria-labelledby="gdt"><div class="g-head"><div><b id="gdt">Rental Intelligence 사용 가이드</b><small>(AI) 임대차 건물 분석 시스템 · 화면 속 건물·금액은 모두 설명용 예시입니다</small></div><button type="button" class="g-x" data-gclose>닫기 ✕</button></div>
+<nav class="g-nav" aria-label="가이드 목차"><button type="button" data-go="g0" class="on">시작하기</button><button type="button" data-go="g1">1단계 내 임대</button><button type="button" data-go="g2">2단계 후보 건물</button><button type="button" data-go="g3">3단계 총비용 비교</button><button type="button" data-go="g5">입지 분석</button><button type="button" data-go="g4">4단계 PDF 보고서</button><button type="button" data-go="g6">알아두기</button></nav>
+<div class="g-body" id="gb">
+<div class="g-intro"><h2>임대 의사결정, <span class="hl">4단계</span>로 끝냅니다</h2><p>내 임대 입력 → 후보 건물 → 총비용 비교 → PDF 보고서. 웹 도구의 사용법을 화면과 함께 정리했습니다. 그림을 누르면 크게 볼 수 있습니다.</p>
+<ol class="g-flow"><li><span>내 임대 입력<small>현재 계약 조건</small></span></li><li><span>후보 건물<small>2~3곳 추가</small></span></li><li><span>총비용 비교<small>순위·점수·협상</small></span></li><li><span>PDF 보고서<small>한 장으로 저장</small></span></li></ol></div>
+
+<section class="gsec" id="g0"><div><h3><i>START</i>시작하기</h3>
+<p>주소창에 서비스 주소(<a href="https://rental-intelligence-okw4.onrender.com/" target="_blank" rel="noopener" style="text-decoration:underline">rental-intelligence-okw4.onrender.com</a>)를 열면 바로 사용할 수 있고, <mark class="hl">로그인과 회원가입은 없습니다.</mark></p>
+<div class="gbox warn"><b>처음 열 때 알아둘 점</b>무료 서버를 쓰기 때문에 15분 넘게 아무도 쓰지 않으면 잠들고, 다시 열면 "서버 깨우는 중…" 문구가 30초~1분 보입니다. 기다리면 자동으로 연결되니 새로고침을 반복하지 마세요.</div>
+<h4>화면 구성</h4><ul><li><b>맨 위 4단계 막대</b>: ① 내 임대 → ② 후보 건물 → ③ 총비용 비교 → ④ 보고서. 눌러서 단계를 오갑니다.</li><li><b>"내 임대" 카드</b>: 검색창 바로 아래에서 현재 계약 중인 건물과 조건을 요약해 보여 줍니다.</li><li><b>지도와 10개 탭</b>: NOC, 제안서, 후보, 총비용, 통근, 시세, 역 접근, 일조, 상권·유동, AI 질문.</li></ul>
+<div class="gbox tip"><b>권장 순서</b>내 임대 입력 → 후보 2~3곳 추가 → 총비용 비교 → 입지 탭 확인 → PDF 저장</div></div></section>
+
+<section class="gsec" id="g1"><div><h3><i>STEP 1</i>내 임대 입력</h3>
+<p>현재 쓰는 사무실 정보를 넣으면 <mark class="hl">모든 비교의 기준(1번)</mark>이 됩니다.</p>
+<ul><li>화면 위 검색창에 건물명이나 주소를 입력합니다. 예: "진학서울", "종로구 경희궁길 34". 건물명은 대소문자·띄어쓰기가 달라도 찾고, 비슷한 이름도 후보로 보여 줍니다(예: "식물관ph").</li><li>목록에서 건물을 누르면 지도가 이동하고 "내 임대" 카드에 건물명, 주소, 좌표(예: 37.5727, 126.9703)가 표시됩니다.</li><li><b>NOC 탭</b>(순임대비용)에 계약 조건을 입력합니다.</li></ul>
+<table class="gt"><thead><tr><th>항목</th><th>입력 내용</th></tr></thead><tbody><tr><td>임대료</td><td>월 임대료(원)</td></tr><tr><td>관리비</td><td>월 관리비(원)</td></tr><tr><td>보증금</td><td>보증금(원)</td></tr><tr><td>면적</td><td>임차 면적(㎡ 또는 평)</td></tr><tr><td>렌트프리</td><td>무상 임대 개월 수</td></tr><tr><td>계약기간</td><td>계약 개월 수와 만료일</td></tr><tr><td>인상률</td><td>연 임대료 인상률(%)</td></tr></tbody></table>
+<p>계약 만료일을 넣으면 만료 시점 알림이 표시됩니다.</p>
+<h4>내 임대 카드 사용법</h4><ul><li><b>✕ 버튼</b>: 내 임대를 비웁니다. 입력값도 함께 지워지므로 새 건물로 처음부터 시작할 수 있습니다.</li><li><b>건물 변경</b>: 검색창으로 돌아가 다른 건물을 내 임대로 지정합니다.</li><li><b>조건 수정</b>: NOC 입력 화면으로 이동합니다.</li></ul>
+<div class="gbox info"><b>건축물대장 정보</b>연면적, 사용승인일 등은 서버에 건축HUB 키가 설정된 경우에만 채워지며, 없으면 "대장 키 없음"으로 표시됩니다. 이때도 나머지 기능은 모두 사용할 수 있습니다.</div></div>
+<div class="gfigs"><figure class="gfig"><button type="button" data-zoom="images/rental-guide-1.png" aria-label="그림 1 크게 보기"><img src="images/rental-guide-1.png" alt="그림 1" loading="lazy" decoding="async"></button><figcaption><b>그림 1. 건물 검색</b> <span class="gn">1</span> 화면 맨 위 검색창("건물명 또는 주소")에 건물명이나 주소를 입력합니다. <span class="gn">2</span> 입력하는 동안 나타나는 자동완성 목록에서 내 건물을 눌러 선택합니다.</figcaption></figure><figure class="gfig"><button type="button" data-zoom="images/rental-guide-2.png" aria-label="그림 2 크게 보기"><img src="images/rental-guide-2.png" alt="그림 2" loading="lazy" decoding="async"></button><figcaption><b>그림 2. NOC 탭에서 내 임대 조건 입력</b> <span class="gn">1</span> 선택한 내 건물. <span class="gn">2</span> 건축물대장 자동 조회 결과. <span class="gn">3</span> 임대료·관리비·보증금 등 계약 조건 입력란.</figcaption></figure></div></section>
+
+<section class="gsec" id="g2"><div><h3><i>STEP 2</i>후보 건물 추가</h3>
+<p>"후보" 탭에서 비교할 건물을 <mark class="hl">2~3곳</mark> 추가합니다. 추가 방법은 세 가지입니다.</p>
+<table class="gt"><thead><tr><th>방법</th><th>언제 쓰나</th><th>하는 일</th></tr></thead><tbody><tr><td>직접 입력</td><td>제안 조건을 이미 알고 있을 때</td><td>건물을 검색해 고른 뒤 임대료·관리비·보증금·면적·렌트프리를 입력합니다.</td></tr><tr><td>비슷한 건물 찾기</td><td>후보를 아직 못 정했을 때</td><td>내 임대 주변의 유사 건물 목록에서 골라 "후보에 추가"를 누릅니다.</td></tr><tr><td>제안서·CSV 불러오기</td><td>중개사 제안서가 있을 때</td><td>파일을 올리면 AI가 조건을 추출합니다. 추출값은 반드시 눈으로 확인한 뒤 저장합니다.</td></tr></tbody></table>
+<h4>후보 관리</h4><ul><li>추가한 후보는 칩(작은 버튼)으로 나열되며, 누르면 해당 후보 기준으로 화면이 바뀝니다.</li><li>칩의 ✕ 또는 후보 카드의 삭제 버튼으로 이전에 비교한 후보를 지울 수 있습니다.</li><li>"내 임대" 단계를 누르면 언제든 내 임대 기준 화면으로 돌아옵니다.</li></ul>
+<div class="gbox info"><b>AI 추출 사용 한도</b>서버에 AI 키가 설정되어 있고 사용 한도(IP당 시간당 15회, 전체 하루 300회) 안일 때만 동작합니다.</div></div>
+<div class="gfigs"><figure class="gfig"><button type="button" data-zoom="images/rental-guide-3.png" aria-label="그림 3 크게 보기"><img src="images/rental-guide-3.png" alt="그림 3" loading="lazy" decoding="async"></button><figcaption><b>그림 3. 후보 탭</b> <span class="gn">1</span> 후보 칩(이름 옆 ✕로 삭제)과 "총비용 비교 보기" 버튼. <span class="gn">2</span> 후보 목록(입지 분석·건축물대장·삭제). <span class="gn">3</span> 후보 추가 방법 3가지.</figcaption></figure></div></section>
+
+<section class="gsec" id="g3"><div><h3><i>STEP 3</i>총비용 비교</h3>
+<p>"총비용" 탭은 임대료만이 아니라 <mark class="hl">관리비, 보증금 금융비용, 렌트프리까지 계약기간 전체</mark>로 환산해 비교합니다.</p>
+<ul><li><b>순위 카드</b>: 건물별 계약기간 총비용을 낮은 순으로 보여 줍니다. 1번은 항상 내 임대이고, 후보는 2번부터 순서대로 표시됩니다.</li><li><b>점수표</b>: 비용, 입지, 조건 등을 가중치로 합산한 종합 점수입니다. 가중치를 바꾸면 순위가 즉시 다시 계산됩니다.</li><li><b>건물별 바로가기 버튼</b>: 카드의 버튼으로 해당 건물의 일조, 역 접근, 통근, 상권·유동 탭으로 바로 이동합니다.</li><li><b>협상 시나리오</b>: 렌트프리 연장이나 인상률 조정 같은 조건을 바꿔 총비용이 얼마나 달라지는지 확인합니다. 협상 목표를 정할 때 유용합니다.</li><li><b>현재가치</b>: 미래 비용을 할인율로 환산해 시점이 다른 비용을 공정하게 비교합니다.</li></ul>
+<div class="gbox tip"><b>휴대폰에서도 볼 수 있습니다</b>표가 좁은 화면에서도 깨지지 않도록 가로 스크롤 없이 접히게 만들어져 있습니다.</div></div>
+<div class="gfigs"><figure class="gfig"><button type="button" data-zoom="images/rental-guide-4.png" aria-label="그림 4 크게 보기"><img src="images/rental-guide-4.png" alt="그림 4" loading="lazy" decoding="async"></button><figcaption><b>그림 4. 총비용 순위 카드</b> <span class="gn">1</span> 1번은 항상 내 임대(현재). <span class="gn">2</span> 2번부터 후보가 비용 순서로 표시됩니다. <span class="gn">3</span> 버튼을 누르면 그 건물의 역 접근·일조·통근·상권 탭으로 이동합니다.</figcaption></figure><figure class="gfig"><button type="button" data-zoom="images/rental-guide-5.png" aria-label="그림 5 크게 보기"><img src="images/rental-guide-5.png" alt="그림 5" loading="lazy" decoding="async"></button><figcaption><b>그림 5. 종합 점수 카드</b> <span class="gn">1</span> 내 임대가 항상 1번. <span class="gn">2</span> 비용·역 도보·상권 점수를 합산한 후보 점수. <span class="gn">3</span> 건물별 바로가기 버튼.</figcaption></figure></div></section>
+
+<section class="gsec" id="g5"><div><h3><i>LOCATION</i>입지 분석 탭</h3>
+<p>내 임대와 각 후보를 같은 기준으로 비교하려면 건물을 고른 뒤 아래 탭을 차례로 확인합니다. 선택한 건물(내 임대 또는 후보)을 기준으로 내용이 바뀝니다.</p>
+<table class="gt"><thead><tr><th>탭</th><th>무엇을 보여 주나</th><th>읽는 법</th></tr></thead><tbody><tr><td>역 접근</td><td>가까운 지하철역과 도보 거리·시간</td><td>거리가 비슷한 역이 있으면 2~3개를 함께 표시합니다(예: 경복궁역, 광화문역). 지도에 경로가 그려집니다.</td></tr><tr><td>일조</td><td>시간대별 햇빛 방향과 그림자</td><td>사무실 채광 판단용 참고 자료입니다.</td></tr><tr><td>상권·유동</td><td>주변 식당·카페 등 상권과 유동 인구</td><td>직원 복지와 방문객 접근성을 볼 때 씁니다.</td></tr><tr><td>통근</td><td>직원 거주지에서 건물까지 통근 거리·시간</td><td>아래에 자세히 설명합니다.</td></tr><tr><td>시세</td><td>주변 임대료 수준</td><td>협상 근거로 씁니다.</td></tr></tbody></table>
+<h4>통근 분석 사용법</h4><ul><li>직원이 사는 지역을 시·도 → 시·군·구 → 동·읍·리 순서로 콤보박스에서 고르고, 그 지역의 인원수를 입력합니다.</li><li>여러 지역을 추가할 수 있습니다. 또는 직원 주소 목록을 한 줄에 하나씩 붙여 넣는 모드도 있습니다.</li><li>지도에 사람 모양 아이콘이 인원수에 따라 커지고, 30분·45분·60분 원이 그려집니다.</li><li>평균 통근 시간과 구간별 인원 분포가 표시됩니다.</li></ul>
+<div class="gbox info"><b>개인정보</b>붙여 넣은 주소 원문은 서버에 저장하거나 기록하지 않고, 동 단위 합계만 이 브라우저에 보관합니다.</div>
+<div class="gbox warn"><b>통근 시간은 추정값입니다</b>직선거리에 대중교통을 가정한 식(10분 + 거리×1.3÷25km/h)으로 계산하므로 실제 경로 시간과 다를 수 있습니다.</div></div>
+<div class="gfigs"><figure class="gfig"><button type="button" data-zoom="images/rental-guide-6.png" aria-label="그림 6 크게 보기"><img src="images/rental-guide-6.png" alt="그림 6" loading="lazy" decoding="async"></button><figcaption><b>그림 6. 역 접근 탭</b> <span class="gn">1</span> 가장 가까운 역 요약(거리가 비슷하면 2~3개 표시). <span class="gn">2</span><span class="gn">3</span> 역별 도보 시간과 거리.</figcaption></figure><figure class="gfig"><button type="button" data-zoom="images/rental-guide-7.png" aria-label="그림 7 크게 보기"><img src="images/rental-guide-7.png" alt="그림 7" loading="lazy" decoding="async"></button><figcaption><b>그림 7. 통근 탭</b> <span class="gn">1</span> 지역별 인원 입력. <span class="gn">2</span> 평균 통근 시간과 구간 비율. <span class="gn">3</span> 지역별 인원과 예상 이동시간.</figcaption></figure></div></section>
+
+<section class="gsec" id="g4"><div><h3><i>STEP 4</i>PDF 보고서</h3>
+<p>"보고서" 단계에서 지금까지 입력한 내용을 <mark class="hl">한 장의 문서</mark>로 만들어 PDF로 저장합니다.</p>
+<ul><li>상단 4단계 막대에서 "보고서"를 누르면 인쇄 화면이 열립니다.</li><li>인쇄 창의 대상(프린터)에서 "PDF로 저장"을 고르고 저장합니다.</li><li>인쇄 옵션에서 "배경 그래픽"을 켜면 색과 표가 화면과 같게 나옵니다.</li></ul>
+<h4>보고서에 들어가는 내용</h4><ul><li><b>내 건물과 후보 건물 개요</b>: "내 건물"은 항상 내 임대(1번)이며, 어느 후보를 보고 있어도 바뀌지 않습니다.</li><li>총비용 비교와 순위, 종합 점수표</li><li>협상 시나리오 요약</li><li>통근 분석: 지역별 인원, 평균 통근 시간, 구간 분포</li><li>입지 정보와 기준 일자</li></ul>
+<div class="gbox tip"><b>저장 전 확인</b>내 임대 조건과 후보가 모두 입력되었는지, 통근 지역을 입력했는지 확인한 뒤 저장하면 빈 항목 없이 나옵니다.</div></div>
+<div class="gfigs"><figure class="gfig"><button type="button" data-zoom="images/rental-guide-8.png" aria-label="그림 8 크게 보기"><img src="images/rental-guide-8.png" alt="그림 8" loading="lazy" decoding="async"></button><figcaption><b>그림 8. PDF 보고서(샘플 데이터)</b> <span class="gn">1</span> 내 건물 조건 요약. <span class="gn">2</span> 총비용 비교표. <span class="gn">3</span> 직원 통근 분석.</figcaption></figure></div></section>
+
+<section class="gsec nofig" id="g6"><div><h3><i>TIPS</i>알아두기</h3>
+<table class="gt"><thead><tr><th>증상</th><th>원인과 해결</th></tr></thead><tbody><tr><td>"서버 깨우는 중…"이 길게 보임</td><td>무료 서버가 잠들었다가 켜지는 중입니다. 1분 정도 기다리면 자동 연결됩니다.</td></tr><tr><td>"서버 연결 실패"</td><td>주소에 아이디:비밀번호가 붙어 있으면 브라우저가 요청을 막습니다. 깨끗한 주소로 다시 열고 Ctrl+F5를 누르세요.</td></tr><tr><td>"대장 키 없음"</td><td>건축물대장 키가 서버에 없을 때의 표시입니다. 다른 기능은 정상입니다.</td></tr><tr><td>AI 기능이 안 됨</td><td>서버에 AI 키가 없거나 사용 한도를 넘었습니다.</td></tr></tbody></table>
+<h4>결과를 읽을 때 유의할 점</h4><ul><li>통근 시간은 직선거리 기반 추정값입니다.</li><li>시세와 상권 정보는 공개 데이터 기준이며 계약 전 현장 확인이 필요합니다.</li><li>이 도구는 의사결정 참고용이며 법률·세무 자문이 아닙니다.</li></ul>
+<div class="gbox info"><b>기술 구성(참고)</b>FastAPI 서버, 단일 HTML 화면, 카카오 지도·장소 API, 건축HUB 건축물대장, 한국부동산원 R-ONE, Anthropic Claude API. 로그인과 데이터베이스가 없고 입력 정보는 브라우저에만 남습니다.</div>
+<p style="margin-top:18px"><a class="cta cta-sm" href="https://rental-intelligence-okw4.onrender.com/" target="_blank" rel="noopener">▶ 시스템 바로가기 <span aria-hidden="true">↗</span></a></p></div></section>
+</div></dialog>
+<dialog class="lb" id="lb" aria-label="이미지 크게 보기"><button type="button" class="lb-x" data-lbclose>닫기 ✕</button><div class="lb-in"><img id="lbi" alt=""></div></dialog>
+<script>
+/* ===== 임대차 사용 가이드 모달 ===== */
+(function(){
+var gd=document.getElementById("gd"),lb=document.getElementById("lb"),gb=document.getElementById("gb");if(!gd)return;
+var root=document.documentElement,navs=[].slice.call(gd.querySelectorAll(".g-nav button"));
+function lock(v){root.style.overflow=v?"hidden":""}
+document.querySelectorAll("[data-guide]").forEach(function(b){b.addEventListener("click",function(){if(gd.showModal)gd.showModal();else gd.setAttribute("open","");lock(1);gb.scrollTop=0})});
+gd.addEventListener("close",function(){lock(0)});
+gd.querySelector("[data-gclose]").addEventListener("click",function(){gd.close()});
+gd.addEventListener("click",function(e){if(e.target===gd)gd.close()});
+navs.forEach(function(b){b.addEventListener("click",function(){var t=document.getElementById(b.dataset.go);if(t)gb.scrollTo({top:t.offsetTop-gb.offsetTop-6,behavior:"smooth"})})});
+var ids=navs.map(function(b){return b.dataset.go});
+gb.addEventListener("scroll",function(){var cur=ids[0],y=gb.scrollTop+gb.clientHeight*.3;ids.forEach(function(id){var s=document.getElementById(id);if(s&&s.offsetTop-gb.offsetTop<=y)cur=id});navs.forEach(function(b){b.classList.toggle("on",b.dataset.go===cur)});var on=gd.querySelector(".g-nav .on");if(on&&on.scrollIntoView)on.parentNode.scrollTo({left:on.offsetLeft-20,behavior:"smooth"})},{passive:true});
+gd.addEventListener("click",function(e){var z=e.target.closest("[data-zoom]");if(!z)return;document.getElementById("lbi").src=z.dataset.zoom;lb.showModal()});
+lb.addEventListener("click",function(e){if(e.target===lb||e.target.closest("[data-lbclose]"))lb.close()});
+})();
 </script>
 </body>
 </html>
